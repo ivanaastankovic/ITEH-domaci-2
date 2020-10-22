@@ -297,9 +297,9 @@
                         }
                         
                         console.log(values)
-
+                        const URLput = "http://localhost:8080/rest/rest/novosti/"+{id_novosti};
                         $.ajax({
-                            'url': `http://localhost:8080/rest/rest/novosti/${id_novosti}`,
+                            'url': URLput,
                             'type': 'PUT',
                             'data': JSON.stringify(values),
                             'success': function(data) {
@@ -314,9 +314,9 @@
                         };
 
                         console.log(values)
-                        
+                        URL="http://localhost:8080/rest/rest/kategorije/"+{id_kategorije};
                         $.ajax({
-                            'url': `http://localhost:8080/rest/rest/kategorije/${id_kategorije}`,
+                            'url': URL,
                             'type': 'PUT',
                             'data': JSON.stringify(values),
                             'success': function(data) {
@@ -329,9 +329,9 @@
     //DOMACI DELETE
                     if (tabela === 'radio_novosti') {
                         const id_novosti = $('#brisanje').val();
-
+                        const URLdelete="http://localhost:8080/rest/rest/novosti/"+{id_novosti};
                         $.ajax({
-                            'url': `http://localhost:8080/rest/rest/novosti/${id_novosti}`,
+                            'url': URLdelete,
                             'type': 'DELETE',
                             'success': function(data) {
                                 alert(`Odgovor od servera> ${data['poruka']}`);
@@ -339,9 +339,9 @@
                         });
                     } else {
                         const id_kategorije = $('#brisanje').val();
-                        
+                        const URLd="http://localhost:8080/rest/rest/kategorije/"+{id_kategorije};
                         $.ajax({
-                            'url': `http://localhost:8080/rest/rest/kategorije/${id_kategorije}`,
+                            'url': URLd,
                             'type': 'DELETE',
                             'success': function(data) {
                                 alert(`Odgovor servera> ${data['poruka']}`);
