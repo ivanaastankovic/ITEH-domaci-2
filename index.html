@@ -233,7 +233,7 @@
             //i ponovo kroz switch prolazimo i obrađujemo svaki zahtev
             switch ( $("input[name=http_zahtev]:checked")[0].id){
                 case "get":
-                //kada je get u pitanju
+             
                 //proveravamo koja je tabela
                     if(tabela=="radio_novosti"){
                         //i nakon toga pozivamo getJSON funkciju kojoj prosleđujemo link endpoint-a našeg API-a
@@ -290,7 +290,6 @@
                 case "put":
                     if (tabela === 'radio_novosti') {
                         const id_novosti = $("#id_novosti").val();
-
                         const values = {
                             'naslov': $('input[name=naslov_novosti_put]').val(),
                             'kategorija_id': parseInt($('#kategorija_odabir_put').val()),
